@@ -1,0 +1,16 @@
+.pageContainer {
+    height: 100%;
+
+    a {
+        text-decoration:  none;        
+    }
+
+    .onhover {
+        cursor: pointer;
+        outline: none !important;
+
+        &:hover {
+            color: blue;
+        }
+    }
+}
