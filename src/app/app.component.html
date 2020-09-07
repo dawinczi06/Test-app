@@ -1,9 +1,12 @@
 <mat-sidenav-container class="pageContainer">
   <mat-sidenav opened mode="side">
-    <mat-list role="list">
-      <mat-list-item class="onhover" role="listitem" [routerLink]="['/home']">Home</mat-list-item>
-      <mat-list-item class="onhover" role="listitem" [routerLink]="['/accounts']">Accounts</mat-list-item>
-      <mat-list-item class="onhover" role="listitem" [routerLink]="['/accounts']">User</mat-list-item>
+    <mat-list role="list" class="nav-list">
+      <mat-list-item class="nav-heading">        
+        Welcome!
+      </mat-list-item>
+      <mat-list-item class="onhover" role="listitem" [routerLink]="['/home']"><span class="material-icons">home</span>Home</mat-list-item>
+      <mat-list-item class="onhover" role="listitem" [routerLink]="['/accounts']"><span class="material-icons">people</span>Accounts</mat-list-item>
+      <mat-list-item class="onhover" role="listitem" [routerLink]="['/admin']"><span class="material-icons">admin_panel_settings</span>Administration</mat-list-item>
     </mat-list>    
   </mat-sidenav>
   <mat-sidenav-content>
