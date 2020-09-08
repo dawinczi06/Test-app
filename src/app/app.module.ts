@@ -12,6 +12,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MatCardModule } from '@angular/material/card';
  
 const routes: Routes = [
   { path: 'accounts', component: AccountsComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    RouterModule.forRoot(routes)  
+    RouterModule.forRoot(routes),
+    MatCardModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
