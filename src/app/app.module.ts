@@ -5,14 +5,18 @@ import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { AccountsComponent } from './accounts/accounts.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
  
 const routes: Routes = [
   { path: 'accounts', component: AccountsComponent},
@@ -20,7 +24,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent},
   { path: 'edit-profile', component: EditProfileComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }
-] 
+]; 
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     RouterModule.forRoot(routes),
-    MatCardModule  
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,  
+    MatSelectModule,
+    MatInputModule     
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,57 @@
-<div class="container">
-    <mat-card class="card-box">
-        <div class="image-container"><img src="../../assets/images/man-photo.jpg" class="profile-image" alt=""></div>
-        <div>
-            <mat-card-title>Dawid</mat-card-title>
-            <mat-card-subtitle>Karbowniczek</mat-card-subtitle>
+<div class="background">
+    <div class="container">
+        <mat-card class="card-box">
+            <div class="image-container"><img src="../../assets/images/man-photo.jpg" class="profile-image" alt="">
+            </div>
+            <div>
+                <mat-card-title class="card-box-title">{{ FirstName }} {{ LastName }}</mat-card-title>
+                <mat-card-subtitle class="card-box-subtitle">{{ Proffesion }}</mat-card-subtitle>
+            </div>
+        </mat-card>
+        <div class="data-container">
+            <mat-card class="data-box">
+                <mat-card-title>Personal Information</mat-card-title>
+                <mat-card-content>
+                    <hr>
+                    <div class="content">
+                        <div>
+                            <h3>First Name:</h3>
+                            <p>{{ FirstName }}</p>
+                            <h3>Last Name:</h3>
+                            <p>{{ LastName }}</p>
+                            <h3>Age:</h3>
+                            <p>{{ Age }}</p>
+                        </div>
+                        <div>
+                            <h3>Nationality:</h3>
+                            <p>{{ Nationality }}</p>
+                            <h3>Language:</h3>
+                            <p>{{ Languages }}</p>
+                            <h3>Height:</h3>
+                            <p>{{ Height }}</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <br>
+                <mat-card-title>Contact</mat-card-title>
+                <hr>
+                <mat-card-content>
+                    <div class="content">
+                        <div>
+                            <h3>Phone Number:</h3>
+                            <p>{{ Phone }}</p>
+                        </div>
+                        <div>
+                            <h3>E-mail:</h3>
+                            <p>{{ Email }}</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <button mat-raised-button color="primary" routerLink="/edit-profile">Edit Profile</button>
+            </mat-card>
+            <mat-card class="actions-box">
+                <mat-card-title>Some Actions</mat-card-title>
+            </mat-card>
         </div>
-        Hello
-    </mat-card>
-    <div class="data-container">
-        <mat-card class="data-box">
-            <mat-card-title>DANE</mat-card-title>
-        </mat-card>
-        <mat-card class="actions-box">
-            <mat-card-title>Actions</mat-card-title>
-        </mat-card>
-    </div>    
+    </div>
 </div>
-
