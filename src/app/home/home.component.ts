@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [FormService]
 })
 export class HomeComponent implements OnInit {
 
-  FirstName: string = 'Dawid';
-  LastName: string = 'Karbowniczek';
-  Age: number = 30;
-  Nationality: string = 'Poland';
-  Languages: string = 'Polish, English';
-  Height: number = 184;
-  Phone: number = 123456789;
-  Email: string = 'dawinczi06@gmail.com';
-  Proffesion: string = "Frontend Developer";
+  userData = {
+    firstName: '',
+    lastName: '',
+    age: null,
+    nationality: '',
+    languages: '',
+    height: null,
+    phone: null,
+    email: '',
+    proffesion: ''
+  };
 
-  constructor() { }
+
+  constructor(private formservice: FormService) { }
 
   ngOnInit(): void {
+    this.userData = this.formservice.onSubmitForm();
   }
 
 }

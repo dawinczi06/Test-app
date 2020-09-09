@@ -4,8 +4,8 @@
             <div class="image-container"><img src="../../assets/images/man-photo.jpg" class="profile-image" alt="">
             </div>
             <div>
-                <mat-card-title class="card-box-title">{{ FirstName }} {{ LastName }}</mat-card-title>
-                <mat-card-subtitle class="card-box-subtitle">{{ Proffesion }}</mat-card-subtitle>
+                <mat-card-title class="card-box-title">{{ userData.firstName }} {{ userData.lastName }}</mat-card-title>
+                <mat-card-subtitle class="card-box-subtitle">{{ userData.proffesion }}</mat-card-subtitle>
             </div>
         </mat-card>
         <div class="data-container">
@@ -16,19 +16,19 @@
                     <div class="content">
                         <div>
                             <h3>First Name:</h3>
-                            <p>{{ FirstName }}</p>
+                            <p>{{ userData.firstName }}</p>
                             <h3>Last Name:</h3>
-                            <p>{{ LastName }}</p>
+                            <p>{{ userData.lastName }}</p>
                             <h3>Age:</h3>
-                            <p>{{ Age }}</p>
+                            <p>{{ userData.age }}</p>
                         </div>
                         <div>
                             <h3>Nationality:</h3>
-                            <p>{{ Nationality }}</p>
+                            <p>{{ userData.nationality}}</p>
                             <h3>Language:</h3>
-                            <p>{{ Languages }}</p>
+                            <p>{{ userData.languages }}</p>
                             <h3>Height:</h3>
-                            <p>{{ Height }}</p>
+                            <p>{{ userData.height }}</p>
                         </div>
                     </div>
                 </mat-card-content>
@@ -39,11 +39,11 @@
                     <div class="content">
                         <div>
                             <h3>Phone Number:</h3>
-                            <p>{{ Phone }}</p>
+                            <p>{{ userData.phone }}</p>
                         </div>
                         <div>
                             <h3>E-mail:</h3>
-                            <p>{{ Email }}</p>
+                            <p>{{ userData.email }}</p>
                         </div>
                     </div>
                 </mat-card-content>
