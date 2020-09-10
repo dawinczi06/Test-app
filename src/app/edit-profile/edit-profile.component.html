@@ -10,29 +10,29 @@
                         <div>
                             <mat-form-field class="my-form-field">
                                 <mat-label>First Name</mat-label>
-                                <input matInput placeholder="First Name" name="firstname" ngModel>
+                                <input matInput placeholder="First Name" name="firstname" [(ngModel)]="userData.firstName">
                             </mat-form-field>
                             <mat-form-field class="my-form-field">
                                 <mat-label>Last Name</mat-label>
-                                <input matInput placeholder="Last Name" name="lastname" ngModel>
+                                <input matInput placeholder="Last Name" name="lastname" [(ngModel)]="userData.lastName">
                             </mat-form-field>
                             <mat-form-field class="my-form-field">
                                 <mat-label>Age</mat-label>
-                                <input matInput placeholder="Age" name="age" ngModel>
+                                <input matInput placeholder="Age" name="age" [(ngModel)]="userData.age">
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field class="my-form-field">
                                 <mat-label>Nationality</mat-label>
-                                <input matInput placeholder="Nationality" name="nationality" ngModel >
+                                <input matInput placeholder="Nationality" name="nationality" [(ngModel)]="userData.nationality" >
                             </mat-form-field>
                             <mat-form-field class="my-form-field">
                                 <mat-label>Languages</mat-label>
-                                <input matInput placeholder="Languages" name="language" ngModel>
+                                <input matInput placeholder="Languages" name="language" [(ngModel)]="userData.languages">
                             </mat-form-field>
                             <mat-form-field class="my-form-field">
                                 <mat-label>Height</mat-label>
-                                <input matInput placeholder="Height" name="height" ngModel> 
+                                <input matInput placeholder="Height" name="height" [(ngModel)]="userData.height"> 
                             </mat-form-field>
                         </div>
                     </div>
@@ -43,13 +43,13 @@
                         <div>
                             <mat-form-field class="my-form-field">
                                 <mat-label>Phone</mat-label>
-                                <input matInput placeholder="Phone" name="phone" ngModel>
+                                <input matInput placeholder="Phone" name="phone" [(ngModel)]="userData.phone">
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field class="my-form-field">
                                 <mat-label>E-mail</mat-label>
-                                <input matInput placeholder="E-mail" name="email" ngModel>
+                                <input matInput placeholder="E-mail" name="email" [(ngModel)]="userData.email">
                             </mat-form-field>
                         </div>
                     </div>

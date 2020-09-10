@@ -10,27 +10,43 @@ import { Router } from '@angular/router';
   providers: [FormService]
 })
 export class EditProfileComponent implements OnInit {
-  @ViewChild('f', {static: false}) signupForm: NgForm;
-  
-  testData = {
-    name: 'Jan',
-    surname: 'Kowalski'
-  }
+  @ViewChild('f', { static: false }) signupForm: NgForm;  
 
-  constructor(private formService: FormService, private router: Router) { 
-    this.formService.onSubmitForm(this.testData);
+  userData: any;  
+  
+  newUserData = {
+    firstName: '',
+    lastName: '',
+    age: null,
+    nationality: '',
+    languages: '',
+    height: null,
+    phone: null,
+    email: '',
+    proffesion: ''
+  };
+
+  constructor(private formService: FormService, private router: Router) {
+    
   }
 
   ngOnInit(): void {
+    // this.formService.currentData.subscribe(data => this.newUserData = data);
+    this.userData = this.formService.formUserData;
   }
 
-  onSave() {
-    this.testData.name = this.signupForm.value.firstname;
-    console.log(this.formService.formUserData.firstName);
-    this.formService.formUserData.firstName = this.signupForm.value.firstname;   
-    console.log(this.formService.formUserData.firstName); 
+  onSave() {    
+    this.newUserData.firstName = this.signupForm.value.firstname;
+    this.newUserData.lastName = this.signupForm.value.lastname;
+    this.newUserData.age = this.signupForm.value.age;
+    this.newUserData.nationality = this.signupForm.value.nationality;
+    this.newUserData.languages = this.signupForm.value.language;
+    this.newUserData.height = this.signupForm.value.height;
+    this.newUserData.phone = this.signupForm.value.phone;
+    this.newUserData.email = this.signupForm.value.email;
+    this.newUserData.proffesion = this.signupForm.value.proffesion;
+
+    this.formService.getNewData(this.newUserData);    
     // this.router.navigate(['/home']);
-
   }
-
 }

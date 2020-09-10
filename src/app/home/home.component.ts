@@ -18,14 +18,16 @@ export class HomeComponent implements OnInit {
     height: null,
     phone: null,
     email: '',
-    proffesion: ''
+    proffesion: '' 
   };
 
 
   constructor(private formservice: FormService) { }
 
   ngOnInit(): void {
-    this.userData = this.formservice.onSubmitForm();
+    // this.formservice.currentData.subscribe(data => this.userData = data);
+    this.userData = this.formservice.formUserData;    
+    console.log(this.userData);       
   }
 
 }
