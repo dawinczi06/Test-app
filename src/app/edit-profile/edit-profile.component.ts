@@ -6,8 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.scss'],
-  providers: [FormService]
+  styleUrls: ['./edit-profile.component.scss'], 
 })
 export class EditProfileComponent implements OnInit {
   @ViewChild('f', { static: false }) signupForm: NgForm;  
@@ -31,8 +30,8 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.formService.currentData.subscribe(data => this.newUserData = data);
-    this.userData = this.formService.formUserData;
+    this.formService.currentData.subscribe(newUserData => this.newUserData = newUserData);
+    // this.userData = this.formService.formUserData;
   }
 
   onSave() {    
@@ -46,7 +45,7 @@ export class EditProfileComponent implements OnInit {
     this.newUserData.email = this.signupForm.value.email;
     this.newUserData.proffesion = this.signupForm.value.proffesion;
 
-    this.formService.getNewData(this.newUserData);    
-    // this.router.navigate(['/home']);
+    this.formService.getNewData(this.newUserData);  
+    this.router.navigate(['/home']);
   }
 }

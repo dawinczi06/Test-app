@@ -5,7 +5,7 @@ import { FormService } from '../form.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [FormService]
+  
 })
 export class HomeComponent implements OnInit {
 
@@ -21,12 +21,11 @@ export class HomeComponent implements OnInit {
     proffesion: '' 
   };
 
-
   constructor(private formservice: FormService) { }
 
   ngOnInit(): void {
-    // this.formservice.currentData.subscribe(data => this.userData = data);
-    this.userData = this.formservice.formUserData;    
+    this.formservice.currentData.subscribe(userData => this.userData = userData);
+    // this.userData = this.formservice.formUserData;    
     console.log(this.userData);       
   }
 

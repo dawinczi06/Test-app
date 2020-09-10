@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,11 @@ export class FormService {
   };
 
   private dataSource = new BehaviorSubject(this.formUserData);
+  public get currentData$(): Observable<any>{
+    return this.dataSource.asObservable();
+  }
   currentData = this.dataSource.asObservable();
-  newData: any;
+  // newData: any;
 
   constructor() { }
 
