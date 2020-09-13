@@ -1,16 +1,17 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { IUser } from './user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
 
-  formUserData = {
+  formUserData: IUser = {
     firstName: 'Dawid',
     lastName: 'Karbowniczek',
     age: 30,
-    nationality: 'Poland',
+    nationality: 'PL',
     languages: 'Polish, English',
     height: 184,
     phone: 123456789,
@@ -19,22 +20,15 @@ export class FormService {
   };
 
   private dataSource = new BehaviorSubject(this.formUserData);
-  public get currentData$(): Observable<any>{
+  public get currentData$(): Observable<IUser>{
     return this.dataSource.asObservable();
-  }
-  currentData = this.dataSource.asObservable();
-  // newData: any;
+  }  
 
   constructor() { }
 
-  // getData (data) {
-  //   this.formUserData = data;
-  //   console.log(this.formUserData);
-  // }
-
   getNewData(newdata) {
     this.dataSource.next(newdata);
-    console.log(this.formUserData);
+    // console.log(this.formUserData);
   }
 
 }
