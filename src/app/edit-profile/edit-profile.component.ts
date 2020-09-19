@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FormService } from '../form.service';
+import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { IUser } from '../user.interface';
 import { Subscription } from 'rxjs';
@@ -269,13 +269,13 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     { country: 'Zimbabwe', value: 'ZW' }
   ];
 
-  constructor(private formService: FormService, private router: Router) {
+  constructor(private dataservice: DataService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.saved = false;
-    this.newUserData = this.formService.formUserData;
-    this.selectedOption = this.formService.formUserData.nationality;
+    this.newUserData = this.dataservice.formUserData;
+    this.selectedOption = this.dataservice.formUserData.nationality;
     console.log(this.signupForm);
   }
 
@@ -291,8 +291,8 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       this.newUserData.phone = this.signupForm.value.phone;
       this.newUserData.email = this.signupForm.value.email;
       this.newUserData.proffesion = this.signupForm.value.proffesion;
-      this.subscription = this.formService.currentData$.subscribe(newUserData => this.newUserData = newUserData);
-      this.formService.getNewData(this.newUserData);
+      this.subscription = this.dataservice.currentData$.subscribe(newUserData => this.newUserData = newUserData);
+      this.dataservice.setData(this.newUserData);
       this.saved = true;
       setTimeout(() => this.router.navigate(['/home']), 1000);
     }

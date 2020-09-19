@@ -5,7 +5,7 @@ import { IUser } from './user.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class FormService {
+export class DataService {
 
   formUserData: IUser = {
     firstName: 'Dawid',
@@ -26,9 +26,7 @@ export class FormService {
 
   constructor() { }
 
-  getNewData(newdata) {
-    this.dataSource.next(newdata);
-    // console.log(this.formUserData);
+  setData(newdata) {
+    this.dataSource.next(newdata);    
   }
-
 }
